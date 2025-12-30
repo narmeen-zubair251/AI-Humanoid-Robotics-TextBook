@@ -1,0 +1,138 @@
+/* -----------------------------------
+   Module Card - Wrapper
+----------------------------------- */
+.moduleCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid #0a5d55;
+  border-radius: 8px;
+  padding: 24px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(8, 77, 69, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.moduleCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(8, 77, 69, 0.15);
+  border-color: #09554d;
+}
+
+/* -----------------------------------
+   Entry Animation - Inner Wrapper
+----------------------------------- */
+.cardContentWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Staggered animation delays for multiple cards */
+.moduleCard:nth-child(1) .cardContentWrapper { animation-delay: 0.1s; }
+.moduleCard:nth-child(2) .cardContentWrapper { animation-delay: 0.2s; }
+.moduleCard:nth-child(3) .cardContentWrapper { animation-delay: 0.3s; }
+.moduleCard:nth-child(4) .cardContentWrapper { animation-delay: 0.4s; }
+
+/* -----------------------------------
+   Card Title
+----------------------------------- */
+.moduleCardTitle {
+  color: var(--ifm-color-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8f4f3;
+
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+/* -----------------------------------
+   Card Description
+----------------------------------- */
+.moduleCardDescription {
+  color: var(--ifm-font-color-base);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* -----------------------------------
+   Button
+----------------------------------- */
+.moduleCardButton {
+  background-color: #084d45;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  margin-top: auto; /* Stick to bottom */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.moduleCardButton:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 10px rgba(8, 77, 69, 0.2);
+  background-color: #09554d;
+}
+
+/* -----------------------------------
+   Entry Animation Keyframes
+----------------------------------- */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* -----------------------------------
+   Responsive Adjustments
+----------------------------------- */
+@media screen and (max-width: 996px) {
+  .moduleCard {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .moduleCard {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .moduleCardTitle {
+    font-size: 1.15rem;
+  }
+
+  .moduleCardDescription {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .moduleCard {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .moduleCardTitle {
+    font-size: 1.1rem;
+  }
+
+  .moduleCardDescription {
+    font-size: 0.85rem;
+  }
+}
+

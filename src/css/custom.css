@@ -5,26 +5,225 @@
  */
 
 /* You can override the default Infima variables here. */
-:root {
-  --ifm-color-primary: #0c5948;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+/* :root {
+  --ifm-color-primary: #084d45;
+  --ifm-color-primary-dark: #07453d;
+  --ifm-color-primary-darker: #063d35;
+  --ifm-color-primary-darkest: #05352d;
+  --ifm-color-primary-light: #09554d;
+  --ifm-color-primary-lighter: #0a5d55;
+  --ifm-color-primary-lightest: #0b655d;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #2c6659;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+/* [data-theme='dark'] {
+  --ifm-color-primary: #084d45;
+  --ifm-color-primary-dark: #07453d;
+  --ifm-color-primary-darker: #063d35;
+  --ifm-color-primary-darkest: #05352d;
+  --ifm-color-primary-light: #09554d;
+  --ifm-color-primary-lighter: #0a5d55;
+  --ifm-color-primary-lightest: #0b655d;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+} */ 
+
+:root {
+  /* Primary teal system (derived from #084d45) */
+  --ifm-color-primary: #0b6f63;
+  --ifm-color-primary-dark: #095c52;
+  --ifm-color-primary-darker: #084d45;
+  --ifm-color-primary-darkest: #063c36;
+  --ifm-color-primary-light: #128a7b;
+  --ifm-color-primary-lighter: #1aa092;
+  --ifm-color-primary-lightest: #3fc4b5;
+
+  /* Brand highlight (hero & hover glow) */
+  --brand-accent: #3fc4b5;
+  --brand-soft: #e6f7f5;
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(11, 111, 99, 0.15);
 }
+
+.navbar {
+  background: linear-gradient(
+    135deg,
+    #084d45,
+    #0b6f63
+  );
+  box-shadow: 0 4px 18px rgba(11, 111, 99, 0.35);
+}
+
+.navbar__brand,
+.navbar__link {
+  color: #e6fffb;
+  font-weight: 500;
+}
+
+.navbar__link:hover {
+  color: var(--brand-accent);
+  text-shadow: 0 0 8px rgba(63, 196, 181, 0.6);
+}
+
+
+/* HERO SECTION ONLY */
+.hero {
+  background: radial-gradient(
+      circle at top,
+      #1aa092,
+      #084d45 70%
+  );
+  color: #ffffff;
+}
+
+.hero__title {
+  text-shadow: 0 4px 25px rgba(63, 196, 181, 0.6);
+}
+
+.hero__subtitle {
+  color: #d9f5f1;
+}
+
+/* Hero buttons */
+.hero .button--primary {
+  background-color: var(--brand-accent);
+  color: #063c36;
+  border: none;
+}
+
+.hero .button--primary:hover {
+  background-color: #ffffff;
+  color: #084d45;
+  box-shadow: 0 0 18px rgba(63, 196, 181, 0.8);
+}
+
+.menu__link {
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.menu__link:hover {
+  background-color: rgba(63, 196, 181, 0.15);
+  color: #084d45;
+  box-shadow: inset 3px 0 0 var(--brand-accent);
+}
+
+.menu__link--active {
+  background-color: rgba(63, 196, 181, 0.25);
+  color: #084d45;
+  font-weight: 600;
+  box-shadow: inset 4px 0 0 #084d45;
+}
+
+.navbar__item .navbar__link--active,
+.navbar__item .navbar__link:hover {
+  background-color: rgba(63, 196, 181, 0.15);
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+}
+
+
+[data-theme='dark'] {
+  --ifm-color-primary: #3fc4b5;
+  --ifm-color-primary-dark: #2fb1a3;
+  --ifm-color-primary-darker: #1aa092;
+  --ifm-color-primary-darkest: #0b6f63;
+  --ifm-color-primary-light: #63d6c8;
+  --ifm-color-primary-lighter: #8be3d8;
+  --ifm-color-primary-lightest: #b9f0e9;
+
+  --docusaurus-highlighted-code-line-bg: rgba(63, 196, 181, 0.2);
+}
+
+/* Dark navbar */
+[data-theme='dark'] .navbar {
+  background: linear-gradient(
+    135deg,
+    #042f2b,
+    #084d45
+  );
+}
+
+/* Dark sidebar hover */
+[data-theme='dark'] .menu__link:hover {
+  background-color: rgba(63, 196, 181, 0.2);
+  color: #b9f0e9;
+}
+
+/* Footer – Light Mode (neutral & elegant) */
+.footer {
+  background-color:#2e4f4b ; /* soft teal-gray */
+  color: #f3f7f6;
+  border-top: 1px solid rgba(8, 77, 69, 0.2);
+}
+
+.footer__title {
+  color:  #f3f7f6; 
+  font-weight: 600;
+}
+
+.footer__link-item {
+  color: #f3f7f6;
+  transition: all 0.2s ease;
+}
+
+.footer__link-item:hover {
+  color: #f3f7f6;
+  text-decoration: underline;
+}
+
+.footer__copyright {
+  color: #f3f7f6;
+  font-size: 0.9rem;
+}
+
+
+/* Global dark background adjustment */
+/* Dark mode – lighter, breathable background */
+[data-theme='dark'] {
+  --ifm-background-color: #0e2a27;              /* main page bg */
+  --ifm-background-surface-color: #143834;     /* cards & sections */
+  --ifm-card-background-color: #183f3b;
+  --ifm-toc-border-color: rgba(63, 196, 181, 0.2);
+}
+
+
+/* Footer – Dark Mode */
+/* Footer – Dark Mode (soft slate, not black) */
+[data-theme='dark'] .footer {
+  background-color: #143834;
+  color: #d6f3ef;
+  border-top: 1px solid rgba(63, 196, 181, 0.25);
+}
+
+[data-theme='dark'] .footer__title {
+  color: #63d6c8;
+}
+
+[data-theme='dark'] .footer__link-item {
+  color: #b9f0e9;
+}
+
+[data-theme='dark'] .footer__link-item:hover {
+  color: #ffffff;
+}
+
+[data-theme='dark'] .footer__copyright {
+  color: #9fded4;
+}
+
+
+/* Soft section separation */
+/* Soft separation for content sections */
+.main-wrapper {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(8, 77, 69, 0.04)
+  );
+}
+
+
+

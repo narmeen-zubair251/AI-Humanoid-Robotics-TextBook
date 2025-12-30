@@ -2,16 +2,13 @@
 # Common PowerShell functions analogous to common.sh
 
 function Get-RepoRoot {
-    $currentDirectory = (Get-Location).Path
     try {
-        $gitToplevel = (git rev-parse --show-toplevel 2>$null).Trim()
-        if ($LASTEXITCODE -eq 0 -and $gitToplevel) {
-            # If we are in a git repository, return the current working directory as the project root
-            # The assumption is that the project's base is where the agent is invoked from.
-            return $currentDirectory
+        $result = git rev-parse --show-toplevel 2>$null
+        if ($LASTEXITCODE -eq 0) {
+            return $result
         }
     } catch {
-        # Git command failed or repo not found
+        # Git command failed
     }
     
     # Fall back to script location for non-git repos
