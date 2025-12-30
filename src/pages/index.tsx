@@ -5,8 +5,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import ModuleCardsGrid from '@site/src/components/ModuleCardsGrid';
 import {moduleData} from '@site/src/data/modules';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Heading from '@theme/Heading';
-
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -20,10 +20,11 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Start Reading 📖
-          </Link>
+  className="button button--secondary button--lg"
+  to={useBaseUrl('docs/module-01-ros2/chapter-01-introduction')}>
+  Start Reading 📖
+</Link>
+
         </div>
       </div>
     </header>

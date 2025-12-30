@@ -1,4 +1,5 @@
 import type {ReactNode} from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
@@ -14,7 +15,8 @@ export default function ModuleCard({title, description, path}: ModuleCardProps):
   <div className={styles.cardContentWrapper}> 
     <h3 className={styles.moduleCardTitle}>{title}</h3>
     <p className={styles.moduleCardDescription}>{description}</p>
-    <Link className={styles.moduleCardButton} to={path}>Start Reading</Link>
+    <Link className={styles.moduleCardButton} to={useBaseUrl(path)}>Start Reading </Link>
+
   </div>
 </div>
 
